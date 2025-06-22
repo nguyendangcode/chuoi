@@ -1,18 +1,19 @@
 ﻿#include <stdio.h>
+#include <stdlib.h>
+struct phan_so {
+	int tu;
+	int mau;
+};
+typedef struct phan_so PHANSO;
 int main() {
-	// nhap tu ban phim so luong phan tu cua mang
-	//sau do nhap tung phan tu cua mang
-	//in tong cua cac phan tu trong mang
-	int n, i, sum = 0;
-	int arr[100];
-	printf("Nhap so luong phan tu cua mang: ");
-	scanf_s("%d", &n);
-	for (i = 0; i < n; i++) {
-		scanf_s("%d",arr+i);
-	}
-	for (i = 0; i < n; i++) {
-		sum += arr[i];
-	}	
-	printf("Tong cua cac phan tu trong mang la: %d\n", sum);
-	return 0;
+	PHANSO* ps1, * ps2;
+	ps1 = (PHANSO*)malloc(sizeof(PHANSO));
+	ps2 = (PHANSO*)malloc(sizeof(PHANSO));
+	ps1->tu = 2;
+	ps1->mau = 4;
+	ps2->tu = 3;
+	ps2->mau = 5;
+	printf("nhan phan so: %d/%d\n", (ps1->tu)*(ps2->tu), (ps1->mau)*(ps2->mau));
+	free(ps1);
+	free(ps2);
 }
