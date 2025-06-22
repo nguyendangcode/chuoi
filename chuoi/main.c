@@ -6,6 +6,7 @@ long long findSubStr(const char *str, const char *subStr) {
 		if( str[i] == subStr[0]) {
 			int j;
 			for (j = 0; subStr[j] != '\0'; j++) {
+
 				if (str[i + j] != subStr[j]) {
 					break;
 				}
